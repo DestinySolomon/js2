@@ -1,15 +1,11 @@
 // // // Variables are containers used to store data values in JS
 // // const name = "ThankGod";
 
+// A value is a piece of data. It is the most fundamental unit of information that we have in programming. Call it the smallest unit of information e.g 23, 50, "Beans"
+
 // const fruit = "apple";
 // let fullName = "John Cena";
 // fullName = "Michael Jackson";
-
-// // let js = "amazing";
-// // if (js == "amazing") alert("JavaScript is fun!");
-
-// let $age = 45;
-// $age = 100;
 
 // console.log(fruit, fullName, $age);
 
@@ -36,6 +32,9 @@
 // let full_Name = "edet Okon";
 // let $age = 70;
 
+let javaScriptIsFun;
+console.log(typeof javaScriptIsFun);
+
 // // let javaScriptIsFun = true;
 
 // // javaScriptIsFun= 67;
@@ -51,10 +50,10 @@
 // let firstName = "James";
 
 // console.log(firstName);
+
 // // DATA TYPES
 // // string, number, boolean, null, undefined, BigInt, symbol
-
-// // string
+// There are two types of numbers in js - integers(ints or int) / floats
 
 // let num = 45;
 // let num2 = "70"; // string
@@ -74,16 +73,17 @@
 // const comma = 56.7;
 
 // // Boolean
+// Boolean is a data type that returns either true or false
 
 // console.log(676 === "676");
 
-// let funds = 500;
+// let funds = 50;
 // let hasAccount = true;
 
 // if (funds >= 200 && hasAccount == true) {
-//   console.log("This user can be a customer");
+//   alert("This user can be a customer");
 // } else {
-//   console.log("This user cannot be a customer");
+//   alert("This user cannot be a customer");
 // }
 
 // let year;
@@ -134,8 +134,9 @@
 // // Arrays
 // // Arrays are special type of variables used to store more than one value.
 
-// let numbers = [7, 18, 20, 44, 80, 124, 645];
-// console.log(numbers[1]);
+let numbers = [7, 18, 20, 44, 80, 124, 645];
+
+console.log(numbers[5]);
 
 const javaScriptStudents = [
   "ThankGod",
@@ -147,20 +148,36 @@ const javaScriptStudents = [
   "Utibe",
   "Cletus",
   "Michelle",
+  "Godwin",
+  "Bright",
+  "Alex",
 ];
 
-// console.log(names[7]);
+console.log(javaScriptStudents[10]);
 
 // // Object
 
+let church = {
+  name: "Die By Fire Ministry",
+  founded: 2001,
+  founder: "Alex",
+  favoriteBibleBooks: ["Matthew", "Deuteronomy", "Malachi", "Solomon"],
+  totalNumberOfFineGirls: 89,
+  motto: "In osusu we trust",
+};
+console.log(church.name);
+
+console.log(church["founded"]);
+
 let student = {
-  name: "Dee",
+  name: "Bright",
   age: 900,
   grade: "SS2",
   subjects: ["Maths", "English", "Geography"],
 };
 
 console.log(student["age"]);
+
 console.log(student.subjects);
 
 // const student = {
@@ -173,46 +190,54 @@ console.log(student.subjects);
 // // Operators
 // // Operators are special symbols that perform operations on variables and values.
 // //1. Arithmetic Operators, assignment operators, comparison operators, logical operators, string operators
+
 // //Arithmetic Operators
 // // -, +, *, %, **, /, ++, --
+
 // //subtraction
 // let subNum = 90 - 20;
+// console.log(subNum)
 
-// var sub_Num = 1000 - 250;
+// var sub_num = 1000 - 250;
 
 // //Addition
 
 // let addNum = 2 + 3;
 
-// let add_Num = 1205 + 5.5;
+// let add_num = 1205 + 5.5;
 
 // Multiplication
+
 // let multNum = 4 * 8;
 // let mult_Num = 0.9 * 300;
 
 // // modulus operation
+
 // let modNum = 10 % 3;
 // let mod_Num = 27 % 4;
 
 // // Exponentiation (Raised to power of)
+
 // let pNum = 34 ** 5;
-// let p_Num = 5 ** 5;
+// let p_num = 5 ** 5;
 
 // // Division
-// let divNum = 4 / 3;
-// let div_Num = 21 / 7;
+
+let divNum = 4 / 3;
+let div_Num = 21 / 7;
 
 // // Increment  ++
-// let incNum = 20;
-// incNum++;
 
-// // incNum = incNum * 2;
-// incNum *= 2;
+let incNum = 20;
+incNum++;
+
+// incNum = incNum * 2;
+incNum *= 2;
 
 // // decrement --
 
-// let decNum = 20;
-// decNum--;
+let decNum = 20;
+decNum--;
 // console.log(decNum);
 
 // // Comparison Operators
@@ -242,7 +267,6 @@ console.log(student.subjects);
 
 let age = 16;
 let hasLicense = true;
-
 
 if (age >= 18 && hasLicense == true) {
   console.log("This person can drive");
@@ -274,8 +298,6 @@ let web = 10;
 web += 20;
 console.log(web);
 
-
-
 let sub = 50;
 sub -= 10;
 console.log(sub);
@@ -298,8 +320,7 @@ message += "World";
 let mez = "Hi";
 let mezz = "My name is Utibe";
 
-console.log(mez +  + " " + mezz); // method 1
-
+console.log(mez + " " + mezz); // method 1
 
 console.log("Hello" + " " + "My name is Utibe"); // method 2
 
