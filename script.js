@@ -386,24 +386,91 @@ if ($age == 18) {
 //FUNCTIONS
 
 //SYNTAX
-/*
-function addNum(){
+function addNum() {
+  //function body
 }
- */
 
-//Examples of normal functions
+// Normal function Examples
 
-//Example1: a simple function to say "hello"
+//1. A simple function to say hello
 
 function sayHello() {
-  console.log("Hello, welcome to JavaScript");
+  console.log("Hello, welcome to javaScript class!");
 }
-sayHello(); // invoking or calling a function
+sayHello();
 
-// Example2:
-// function with a parameter(input)
+// The act of calling a function is known as invoking  the function.
 
+//2. function with a parameter(input)
 function greet(name) {
-  console.log("Hello" + " " + name + "!");
+  alert("Hello" + " " + name + "!");
 }
-greet("Joy");
+greet("John");
+
+// function expression
+// Anytime we get a variable and set it equal to something whther it's a function or string or something else, that is known as expression E.g
+
+const speak = function () {
+  console.log("Good day!");
+};
+speak();
+
+// 3. function that adds two numbers
+
+function addNum(a, b) {
+  return a + b;
+}
+console.log(addNum(5, 30));
+
+function plusNum(x, y) {
+  return x + y;
+}
+console.log(plusNum(34, 12));
+
+//4. function that checks if a number is even
+function checkEven(num) {
+  return num % 2 === 0;
+}
+console.log(checkEven(8));
+
+// Arrow Functions
+//1. simple arrow function
+
+const sayHi = () => console.log("Hi!");
+sayHi();
+
+//2. arrow function with parameter
+
+const greet = (name) => console.log("Hello" + " " + name);
+
+// 3. Arrow function that adds numbers
+
+const addNums = (a,b) => a + b;
+console.log(addNums(7.90, 12.0));
+
+// 4. Arrow function with one parameter(no need for brackets)
+const mult =(num) => num * num;
+console.log(mult(8));
+
+//. 5 Arrow function returning an object
+
+const studentInfo = (name, age) =>({name:name, age: age});
+console.log(studentInfo("David", 70));
+
+
+//6. Arrow functions with multiple lines (use curly braces + return) 
+
+const getGrade = (score)=>{
+  if(score >= 70) return "A";
+  else if(score >= 50) return "B";
+  else return "F";
+}
+console.log(getGrade(80));
+
+//7. Arrow function inside an array map()
+
+const numberz = [1, 2,3,4];
+const values = [6,8,9,5];
+const squares = numberz.map((double) => double * double);
+console.log(squares);
+
