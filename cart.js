@@ -35,7 +35,6 @@ const showCart = () => {
     cart.forEach((item, index) =>{
         let li = document.createElement("li");
         li.textContent = `${item.name} - $${item.price} x ${item.quantity} = $${item.price * item.quantity}`;
-      
 
         //Remove button
 
@@ -49,10 +48,13 @@ const showCart = () => {
     });
     document.getElementById("total").textContent = calculateTotal();
 
-    //normal function - clear cart
+   
 
-    function clearCart(){
+}
+ //normal function - clear cart
+  function clearCart(){
         cart = [];
         showCart();
     }
-}
+
+// ARRAYS AND BASIC ARRAY METHODS 
