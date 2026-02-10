@@ -562,8 +562,8 @@ console.log(classList);
 
 //2. Add a student
 
-let studentz = ["Bright", "Weedsdom", "Dave", "TG", "Victor"];
-studentz.splice(1, 0, "Alex");
+let studentz = ["Bright", "Weedsdom", "Dave", "TG", "Victor", "Alex"];
+studentz.splice(1, 0, "Cravis");
 console.log(studentz);
 
 // slice() - Extracts a portion of an array
@@ -607,10 +607,12 @@ let namez = ["John", "Dave", "Eunice", "Jane"];
 let jnames = namez.filter((name) => name.startsWith("J"));
 console.log(jnames);
 
-// Control Flow / Condtional Statements (if statement, if else statement, switch statement)
 
-let num = 13;
-if (num >= 18) {
+// Control Flow / Condtional Statements (if statement, else statement, else if, switch statement)
+
+let agee = 15;
+
+if (agee >= 18) {
   console.log("This user is an adult");
 } else {
   console.log("This user is a minor");
@@ -631,3 +633,608 @@ if (divIndex >= 9) {
 } else {
   console.log("This is a fifth world country");
 }
+
+// Switch Statement
+let light = "Green";
+
+switch (light) {
+  case "Red":
+    console.log("Stop!");
+    break;
+  case "Yellow": 
+    console.log("Get Ready!");
+    break;
+  case "Green":
+    console.log("Go!");
+    break;
+  default:
+    console.log("Light don spoil");
+}
+// 2
+
+//callback function
+
+let day = "Sunday";
+
+switch (day) {
+  case "monday":
+    console.log("First working day of the week");
+    break;
+  case "tuesday":
+    console.log("second working day of the week");
+    break;
+  case "wednesday":
+    console.log("third working day of the week");
+    break;
+  case "thursday":
+    console.log("fourth working day of the week");
+    break;
+  case "friday":
+    console.log("TGIF 🕺🕺💃🕺");
+    break;
+  default:
+    console.log("It is the weekend!");
+}
+
+console.log(`today is ${day}`);
+
+// OBJECTS AND OBJECTS METHOD.
+// JS is a high-level objected oriented, multi-paradigm programming language.
+
+// An object is a collection of related properties and/ or methods
+
+const person = {
+  firstName: "Okon",
+  lastName: "Peter",
+  age: 70,
+  isEmployed: true,
+};
+
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person.age);
+console.log(person.isEmployed);
+
+// Object Method is an object property that contains a function definition
+const person1 = {
+  firstName: "TG",
+  lastName: "Effiong",
+  favCars: ["benz", "Toyota"],
+  greet: function greet() {
+    console.log("Hello World!");
+  },
+};
+
+person1.greet();
+
+const person2 = {
+  firstName: "TG",
+  lastName: "Effiong",
+  favCars: ["benz", "Toyota"],
+  greet: function () {
+    console.log("Hello goat!");
+  },
+};
+person2.greet();
+
+const person3 = {
+  firstName: "Bright",
+  lastName: "Atakpa",
+};
+
+function sayHello() {
+  console.log("Hello");
+}
+person3.saying = sayHello;
+console.log(person3);
+
+const person4 = {
+  firstName: "Weedsdom",
+  lastName: "Cana",
+  cook() {
+    console.log("Cook Spag");
+  },
+};
+person4.cook();
+
+// "this" keyword
+// To access the other properties of an object within a method of the same object we can use "this" keyword
+
+const person5 = {
+  firstName: "Alex",
+  lastName: "Owoyop",
+  color: "grey",
+  age: 100,
+  greet: function () {
+    console.log("Hello " + this.firstName);
+  },
+};
+person5.greet();
+
+const person6 = {
+  firstName: "Dee",
+  lastName: "Solomon",
+  getFullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+console.log(person6.getFullName());
+
+console.log(Object.keys(person6));
+console.log(Object.values(person6));
+console.log(Object.entries(person6));
+
+// ES6 Syntax - Let, Const, Template Literals, Destructuring
+// ES6 stands for ECMAScript 2015
+
+// let and const are block-scoped way of declaring variables
+{
+  let x = 10;
+  console.log(x);
+}
+
+console.log(x);
+
+// Template Literals
+// Template literals are string literals allowing embedded expressions. They are enclosed by the back-tick(``) character instead of double or single quotes. They make it easier to create strings with variables and expressions.
+
+let fname = "Utibe";
+let herAge = 70;
+// console.log("My name is " + fname + " and I am " + herAge + " years old.");
+
+console.log(`My name is ${fname} and and I am ${herAge} years old.`);
+
+// Destructuring
+// Destructuring is a convenient way of extracting multiple values from data stored in objects and arrays.
+// simply put, it is a JS expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+//Destructuing an Object
+
+let person8 = {
+  fullName: "Alex",
+  hisAge: 90,
+  country: "Biafra",
+};
+
+// Old Way
+// let me = person8.fullName;
+// console.log(me);
+
+// ES6 way
+let { fullName, hisAge, country } = person8;
+console.log(country);
+
+// Destructuring an Array
+
+let colors = ["red", "blue", "green"];
+
+//Old way
+// let first = colors[0];
+// let second = colors[1];
+
+// console.log(first);
+
+//ES6 way
+
+let [firstColor, secondColor, thirdColor] = colors;
+
+console.log(thirdColor);
+
+// Create an array of fruits and destructure it using the ES6 Method.
+// Show the various fruits as a single fruit in the console
+
+// Function Scope and Hoisting
+// Scope refers to the accessibility of variables, functions, and objects in some particular part of your code during runtime.
+function showMessage() {
+  let message = "Hello, welcome to Mita School!";
+  console.log(message);
+}
+
+showMessage();
+// console.log(message); // Error: message is not defined
+
+// hoisting
+// Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+
+console.log(greetUser("John")); // Works because of hoisting
+
+function greetUser(name) {
+  return `Hello, ${name}!`;
+}
+
+// Basic Error Handling
+// An error is an unexpected problem that arises during the execution of a program, disrupting its normal flow.
+
+// An object created to represent a problem
+// TYPES OF ERROR
+
+//1. Syntax Error- Occurs when the code is not written according to the syntax rules of the programming language.
+//2. Runtime Error - Occurs during the execution of the program, often due to invalid operations or references.
+// 3. Logical Errors- Occurs when the code runs without crashing, but produces incorrect or unexpected results.
+
+// EXAMPLES:
+
+console.log("Hello");
+
+console.log("You have reached the end!");
+
+// Network errors
+//promise rejections
+//security errors
+//invalid user input
+
+// try{} = contains the code that may cause an error
+//catch(error){}= contains the code that rus if an error occurs in the try block. The error object is passed as a parameter to the catch block.
+//finally{} = contains code that will always run after the try and catch blocks, regardless of whether an error occured or not. This block is optional.
+
+//Example
+
+try {
+  console.leg("Hello");
+} catch (error) {
+  console.log(error);
+} finally {
+  console.log("You have reached the end!");
+}
+
+// Errors from user inputs
+// const dividend = window.prompt("Enter a dividend");
+// const divisor = window.prompt("Enter a divisor");
+
+// const result = dividend / divisor;
+// console.log(`The result is ${result}`);
+
+// try{
+//   const dividend = window.prompt("Enter a dividend");
+// const divisor = window.prompt("Enter a divisor");
+
+// const result = dividend / divisor;
+// console.log(`The result is ${result}`);
+
+// }catch(error){
+//   console.error(error)
+// }finally{
+//   console.log("Fine!!")
+// }
+
+// try {
+//   const dividend = window.prompt("Enter a dividend");
+//   const divisor = window.prompt("Enter a divisor");
+
+//   if (divisor == 0) {
+//     throw new Error("You can't divide by zero");
+//   }
+
+//   const result = dividend / divisor;
+//   console.log(`The result is ${result}`);
+// } catch (error) {
+//   console.error(error);
+// }
+
+try {
+  const dividend = Number(window.prompt("Enter a dividend"));
+  const divisor = Number(window.prompt("Enter a divisor"));
+
+  if (isNaN(dividend) || isNaN(divisor)) {
+    throw new Error("Values must be a number");
+  }
+
+  const result = dividend / divisor;
+  console.log(`The result is ${result}`);
+} catch (error) {
+  console.error(error);
+}
+
+//
+
+const balance = 1000;
+const cashout = window.prompt("Enter amount to cash out");
+
+try {
+  if (cashout > balance) {
+    throw new Error("Insufficient Funds");
+  }
+  balance -= cashout;
+  console.log(`You have successfully cashed out ${cashout}`);
+} catch (error) {
+  console.error(error);
+}
+
+// CLOSURES AND LEXICAL SCOPES
+//Closures = A function defined inside another function, the inner function has access to the variables and scope of the outer function.
+// By using closures, they:
+// Allow for private variables and state maintenance
+// Used frequently in JS frameworks: React, Vue, Angular
+
+//EXAMPLE 1:
+// function outer() {
+//   let message = "Welcome";
+
+//   function inner() {
+//     console.log(message);
+//   }
+
+//   inner();
+// }
+
+// outer();
+
+//EXAMPLE 2:
+
+function createCounter() {
+  let count = 0;
+
+  function increment() {
+    count++;
+    console.log(`count increased by ${count}`);
+  }
+
+  function getCount() {
+    return count;
+  }
+
+  return { increment, getCount };
+}
+const counter = createCounter();
+
+counter.increment();
+counter.increment();
+counter.increment();
+console.log(`The current count is ${counter.getCount()}`);
+
+// EXAMPLE 3:  Closure for game
+function createGame() {
+  let score = 0;
+
+  function increaseScore(points) {
+    score += points;
+    console.log(`+${points}pts`);
+  }
+
+  function decreaseScore(points) {
+    score -= points;
+    console.log(`-${points}pts`);
+  }
+
+  function getScore() {
+    return score;
+  }
+
+  return { increaseScore, decreaseScore, getScore };
+}
+
+const game = createGame();
+
+game.increaseScore();
+game.increaseScore();
+game.decreaseScore();
+
+console.log(`The final score is ${game.getScore()}pts`);
+
+// Loops and Iterarion
+// A loop is a programming construct that repeats a block of code as long as a specified condition is true.
+// Types of loops in JS
+// 1. for loop
+// 2. while loop
+// 3. do...while loop
+// 4. for...in loop
+// 5. for...of loop
+
+//1. For Loop
+////The for loop is used when the number of iterations is known.
+for (let i = 0; i < 5; i++) {
+  console.log(`Iteration number ${i}`);
+}
+
+//2.
+
+//2. While Loop
+//// The while loop executes a block of code as long as a specified condition evaluates to true.
+
+// SYNTAX
+// while(condition){
+//   //code to be executed
+// }
+
+let w = 0;
+while (w < 10) {
+  console.log(`count is ${w}`);
+  w++;
+}
+
+// the do... while loop
+//Syntax
+////The do...while loop is similar to the while loop, but guarantees that the code block will be executed at least once, before the condition is checked.
+// do {
+//   //code block to be executed
+// } while (condition);
+
+let s = 2;
+do {
+  console.log(`count is ${s}`);
+  s++;
+} while (s < 10);
+
+// for ...in loop
+//The for...in loop iterates over the enumerable properties of an object.
+//It is typically used for iterating over object keys.
+
+// SYNTAX
+//for (key in object) {
+// code block to be executed
+//}
+//A JavaScript for...in statement loops through the properties of a person object:
+
+const personz = { fname: "Weedsdom", lname: "Ifiok", age: 70 };
+for (let x in personz) {
+  console.log(personz[x] + " ");
+}
+
+//  the for.. of loop
+////The for...of loop iterates over the values of iterable objects such as arrays, strings, Maps, Sets, and NodeLists.
+
+// SYNTAX
+// for (variable of iterable) {
+//   // code block to be executed
+// }
+
+const cars = ["BMW", "vOLVO", "TOYOTA"];
+
+for (let car of cars) {
+  console.log(car);
+}
+
+//2.  looping through an array
+const colorss = ["red", "blue", "green", "yellow", "purple"];
+
+for (let i = 0; i < colorss.length; i++) {
+  console.log(colorss[i]);
+}
+
+// ASSIGNMENT
+/*1. Create a for loop that prints numbers from 1 to 40 in the console.
+
+2. Create a while loop that prints the even numbers from 2 to 20 in the console.
+3. Create a do...while loop that prints the odd numbers from 1 to 19 in the console.
+4. Create an object representing a car with properties like make, model, year, and color. Use a for...in loop to print all the properties and their values in the console.
+5. Create an array of your favorite movies. Use a for...of loop to print each movie title in the console.
+*/
+
+//EVENTS
+//HTML events are things that happen to HTML elements.
+/*
+
+Examples of events:
+
+An HTML button is clicked
+A web page has finished loading
+The mouse moves over an element
+A keyboard key is pressed
+An HTML input field is changed
+
+JavaScript Events
+Often, when events happen, you may want to do something.
+
+When JavaScript is used in HTML pages, JavaScript can react on events.
+
+JavaScript lets you execute code when events are detected.
+
+HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.
+*/
+
+// SYNTAX
+// with single quotes
+// <element event='some JavaScript code'>
+
+// with double quotes
+// <element event="some JavaScript code">
+
+//Calling a JS Function
+////Calling a JavaScript Function
+//  JavaScript code can often be several lines long.It is more common to use the event attribute to call a functions:
+
+/*
+Event	Description
+onchange	An HTML element has been changed
+onclick	The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	The browser has finished loading the page
+
+
+Using an Event Listener
+Using event attributes like onclick are easy to use.
+
+Nevertheless, using addEventListener() is the recommended way to handle events.
+*/
+
+// MOUSE EVENTS
+// Mouse events are events that occur when the user interacts with a web page using a mouse.
+// Examples of mouse events include:
+// click - occurs when the user clicks on an element
+// dblclick - occurs when the user double-clicks on an element
+// mouseover - occurs when the user moves the mouse pointer over an element
+// mouseout - occurs when the user moves the mouse pointer out of an element
+// mousedown - occurs when the user presses a mouse button over an element
+// mouseup - occurs when the user releases a mouse button over an element
+// mousemove - occurs when the user moves the mouse pointer while it is over an element
+
+// KEYBOARD EVENTS
+// Keyboard event happens when a the user presses a key on the keyboard
+// keydown
+//keyup
+//keypress
+
+// === Timing Events====
+// Timing events are used to schedule code execution at specified time in intervals
+// Timing is driven by Timing Events generated by the system clock
+
+// Common Timing Events
+// setTimeout(function, milliseconds) - Executes a function once after a specified number of milliseconds.
+// setInterval(function, milliseconds) - Repeatedly executes a function at specified time intervals (in milliseconds) until stopped.
+// clearTimeout(timeoutID) - Stops a function that was set to execute with setTimeout().
+// clearInterval(intervalID) - Stops a function that was set to execute repeatedly with setInterval().
+
+// SetTimeout method
+// The SetTimeout() method calls a function or evaluates an expression after a specified number of milliseconds
+
+// SetInterval and clearInterval Method
+// setInterval method calls a function repeatedly
+
+// ==== DOM MANIPULATION ====
+
+// DOM selectors
+// DOM stands for document object model. It is a programming interface for HTML and XML documents that represent the web page as a structured tree of objects that JavaScript can interact with.
+
+/*
+HTML (Grandparent)
+├── HEAD (Parent)
+│   ├── TITLE (Child)
+│   └── META (Child)
+└── BODY (Parent)
+    ├── H1 (Child)
+    ├── P (Child with text)
+    └── DIV (Child)
+        └── BUTTON (Grandchild)
+        */
+
+//The HTML DOM is a tree of Nodes that represents an HTML Page.
+//Each part of the document are nodes in the tree:
+
+// const paragraph = document.getElementById("msg");
+// paragraph.textContent = "hi";
+
+//DOM Selectors
+
+// DOM selectors are methods used to select and manipulate HTML elements in the DOM
+//Common DOM selectors are:
+//1. getElementById(): Selects a single elemnt by its unique ID
+//2. getElementsByClassName(): Selects all elements with a specific class name
+//3. getElementByTagName(): selects all elements with a specific class name.
+//4. querySelector(): Selects the first element that matches a specified CSS selector
+//5. querySelectorAll(): Selects all the elements that match a specified CSS selector.
+
+// Create method()
+// The create method creates a new HTML element specified by tagname
+
+//synthax
+// document.createElement(tagName)
+
+// appendChild() method
+// The appendChild() method adds a new child node to an element as the last child node
+// synthax 
+// parentNode.appendChild(childNode)
+
+// Remove method()
+//The remove() method removes the specified element from the DOM
+//synthax: element.remove()
+
+
+// ===== Manipulating HTML and CSS using JS ==== 
+
+// ==== Forms and User Input Handling==========
+// Forms are used to collect user input on web pages. JavaScript can be used to handle form submissions, validate user input, and provide feedback to users.
+
+// Form Validation
+// Form validation is the process of checking user input in a form to ensure it meets certain criteria before it is submitted to the server. This can include checking for required fields, validating email addresses, and ensuring that passwords meet complexity requirements.

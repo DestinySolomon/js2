@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <h1>EVENTS</h1> -->
+    <!-- <h2> Example 1</h2>
+
+    <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+    <p id="demo">Time</p>  -->
+    <!-- 
+    <h2>Example 2</h2>
+    <button onclick="this.innerHTML = Date()">The time is?</button> -->
+
+    <!-- <h2>Example 3</h2>
+
+    <p>Click the button to display the date.</p>
+
+    <p id="demo"></p>
+
+    <button onclick="displayDate()">The time is?</button>
+
+    <script>
+      function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+      }
+    </script> -->
+    <!-- 
+    <h2>Example 4</h2>
+    <button id="myBtn">Time is?</button>
+
+    <p id="demo"></p>
+
+    <script>
+      const btn = document.getElementById("myBtn");
+
+      btn.addEventListener("click", function () {
+        document.getElementById("demo").innerHTML = Date();
+      });
+    </script> -->
+
+    <!-- 
+
+     <h2>Mouse Double Click</h2>
+
+    <button id="myButton">Double-click me</button>
+
+    <p id="message"></p>
+    <script>
+      const button = document.getElementById("myButton");
+      const message = documnet.getElementById("message");
+
+      // add event listener
+      button.addEventListener("dblclick", function () {
+        message.textContent = "Button was clicked!";
+
+        // add style to button
+        button.style.backgroundColor = "lightgreen";
+        setTimeout(() => {
+          button.style.backgroundColor = "";
+        }, 500);
+      });
+    </script>  -->
+
+    <!-- <h2>Mouse Move event</h2>
+
+    <div id="tracker" style="height: 200px; border: 2px solid black">
+      Mouse Over Here
+    </div>
+
+    <p id="coordinates"></p>
+
+    <script>
+      const tracker = document.getElementById("tracker");
+      const coords = document.getElementById("coordinates");
+
+      tracker.addEventListener("mousemove", function (e) {
+        coords.textContent = `X: ${e.clientX}, Y: ${e.clientY}`;
+      });
+    </script> -->
+
+    <!-- <h2>Mouseover and Mouseout</h2>
+    <div
+      id="box"
+      style="width: 200px; height: 100px; padding: 16px; border: 1px solid gray"
+    >
+      Move mouse over this Box
+    </div>
+
+    <script>
+      const box = document.getElementById("box");
+      box.addEventListener("mouseover", function () {
+        box.innerHTML = "Mouse is over me!";
+      });
+
+      box.addEventListener("mouseout", function () {
+        box.innerHTML = "Mouse is out!";
+      });
+    </script> -->
+
+    <!-- Keyboard Events -->
+    <!-- <h2>The keydown Event</h2>
+    <input id="k" type="text" placeholder="Press a key here!" />
+
+    <p id="demo"></p>
+
+    <script>
+      const k = document.getElementById("k");
+
+      k.addEventListener("keydown", function (event) {
+        document.getElementById("demo").innerHTML = "You pressed: " + event.key;
+      });
+    </script> -->
+
+    <!-- <h2>Clock</h2>
+    <p id="clock"></p>
+
+    <script>
+      setInterval(showTime, 1000);
+
+      function showTime() {
+        const d = new Date();
+        document.getElementById("clock").innerHTML =
+          d.getHours() + ";" + d.getMinutes() + ";" + d.getSeconds();
+      }
+    </script> -->
+
+    <!-- <h2>The SetTimeout() Method</h2>
+
+    <button id="btn">start</button>
+
+    <p id="demo">Wait</p>
+
+    <script>
+      const utibe = document.getElementById("btn");
+
+      utibe.addEventListener("click", function () {
+        setTimeout(showMsg, 3000);
+      });
+
+      function showMsg() {
+        document.getElementById("demo").innerHTML = "I waited for 3 seconds";
+      }
+    </script> -->
+
+    <!-- SetInterval and clearInterval  -->
+
+    <!-- <h2>The setInterval() Method</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <p id="counter">0</p>
+
+    <script>
+      let myInterval;
+      let count = 0;
+
+      const btnStart = document.getElementById("start");
+      const btnStop = document.getElementById("stop");
+
+      btnStart.addEventListener("click", function () {
+        myInterval = setInterval(counter, 1000);
+      });
+
+      btnStop.addEventListener("click", function () {
+        clearInterval(myInterval);
+      });
+
+      function counter() {
+        count++;
+        document.getElementById("counter").innerHTML = count;
+      }
+    </script> -->
+
+    <h1>DOM Manipulation</h1>
+
+    <!-- <h2>Get Element By Class Namme</h2>
+
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <button id="colorBtn">Change All Boxes</button>
+
+    <script>
+      document
+        .getElementById("colorBtn")
+        .addEventListener("click", function () {
+          const boxes = document.getElementsByClassName("box");
+
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.background = "blue";
+            boxes[i].style.color = "grey";
+          }
+        });
+    </script> -->
+    <!-- 
+    <h2>Get Element By Tag Name</h2>
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <p>paragraph 3</p>
+    <button id="styleBtn">Style All Paragraphs</button>
+
+    <script>
+      document
+        .getElementById("styleBtn")
+        .addEventListener("click", function () {
+          let paragraphs = document.getElementsByTagName("p");
+
+          for (let para of paragraphs) {
+            para.classList.add("highlight");
+
+            paragraphs[0].style.color = "red";
+          }
+        });
+    </script> -->
+
+    <!-- <h2>Query selector</h2>
+    <div id="container">
+      <p class="special">Special Paragraph</p>
+      <p>Normal paragraph</p>
+    </div>
+
+    <button id="selectBtn">Select First Special</button>
+
+    <script>
+      document
+        .getElementById("selectBtn")
+        .addEventListener("click", function () {
+          const firstSpecial = document.querySelector(".special");
+
+          if (firstSpecial) {
+            firstSpecial.classList.add("selected");
+            firstSpecial.textContent = "selected";
+          }
+
+          const containerPara = document.querySelector("#container p");
+          if (containerPara) {
+            containerPara.style.fontSize = "50px";
+          }
+        });
+    </script> -->
+
+    <!-- <h2>products</h2>
+
+    <div class="card">Rice</div>
+    <div class="card">Beans</div>
+    <div class="card">Palm Oil</div>
+    <div class="card">Yam</div>
+
+    <button id="highlightBtn">highlight</button>
+
+    <script>
+      const button = document.querySelector("#highlightBtn");
+      const card = document.querySelector(".card");
+
+      button.addEventListener("click", function () {
+        card.style.backgroundColor = "yellow";
+        card.style.fontWeight = "bold";
+        card.style.color = "red";
+      });
+    </script> -->
+
+    <!-- <h2>Query Selector All</h2>
+
+    <div class="card">Rice</div>
+    <div class="card">Beans</div>
+    <div class="card">Palm Oil</div>
+    <div class="card">Yam</div>
+
+    <button id="activateBtn">Activate Products</button>
+
+    <script>
+      const cards = document.querySelectorAll(".card");
+      const button = document.querySelector("#activateBtn");
+
+      button.addEventListener("click", function () {
+        for (let card of cards) {
+          card.classList.add("active");
+        }
+      });
+    </script> -->
+
+    <!-- <h2>Methods</h2>
+    <button id="addItem">Add Message</button>
+
+    <button id="removeItem">Remove Message</button>
+
+    <div id="box"></div>
+
+    <script>
+      const addBtn = document.getElementById("addItem");
+      const removeBtn = document.getElementById("removeItem");
+
+      const box = document.getElementById("box");
+
+      let message;
+
+      addBtn.addEventListener("click", () => {
+        message = document.createElement("p");
+
+        message.textContent = "Hello, Welcome to Mita School!";
+
+        box.appendChild(message);
+      });
+
+      removeBtn.addEventListener("click", () => {
+        if (box.lastElementChild) {
+          box.lastElementChild.remove();
+        }
+      });
+    </script> -->
+
+    <h1>DOM Manipulation Demo</h1>
+
+    <div class="container">
+      <h2 id="title">DOM Manipulation</h2>
+
+      <button id="loadBtn">Load Profile</button>
+      <button id="themeBtn">Toggle Dark Mode</button>
+
+      <div id="loader" class="loader hidden"></div>
+
+      <div id="card" class="card hidden">
+        <img id="profileImg"/>
+        <h3 id="name"></h3>
+        <p id="role"></p>
+      </div>
+    </div>
+
+    <script>
+      const loadBtn = document.getElementById("loadBtn");
+      const themeBtn = documnent.getElementById("themeBtn");
+      const loader = document.getElementById("loader");
+      const card = document.getElementById("card");
+      const textName = document.getElementById("name");
+      const roleText = document.getElementById("role");
+      const title = document.getElementById("title");
+      const profileImg = document.getElementById("profileImg");
+
+      let darkMode = false;
+
+      loadBtn.addEventListener("click", function () {
+        title.textContent = "Loading Profile....";
+        title.style.color = "orange";
+
+        loader.classList.remove("hidden");
+        card.classList.add("hidden");
+
+        setTimeout(function () {
+          loader.classList.add("hidden");
+
+          textName.textContent = "Victor";
+          roleText.textContent = "Web Developer";
+
+          profileImg.src = "https://i.pravatar.cc/150";
+          profileImg.alt = "Profile Image";
+
+          card.style.backgroundColor = "#d1ffe3";
+          card.style.border = "2px solid green";
+
+          card.classList.remove("hidden");
+
+          title.textContent = "Profile Loaded Successfully!";
+          title.style.color = "green";
+        }, 2000);
+      });
+
+      themeBtn.addEventListener("click", function () {
+        if (darkMode === false) {
+          document.body.classList.add("dark");
+          themeBtn.textContent = "Switch to Light Mode";
+          darkMode = true;
+        } else {
+          document.body.classList.remove("dark");
+          themeBtn.textContent = "Toggle Dark Mode";
+          darkMode = false;
+        }
+      });
+    </script>
+
+    <script src="js2.js"></script>
+  </body>
+</html>

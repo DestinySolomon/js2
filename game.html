@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game with Timer</title>
+   <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    
+<div class="game-box">
+    <h3 class="text-center mb-3">🎯 Number Guessing Game</h3>
+
+<div class="mb-3">
+<label for="form-label">Select  Difficulty:</label>
+<select  id="difficulty" class="form-select">
+<option value="easy"> Easy (1-20, 30s)</option>
+<option value="medium">Medium (1-50, 20s)</option>
+<option value="hard">Hard (1-100, 10s)</option>
+</select>
+</div>
+
+<button class="btn btn-success w-100 mb-3" onclick="startGame()">Start Game</button>
+
+<div id="gameArea" style="display:none;">
+
+<p><strong>Time Left:</strong> <span id="timer">0</span> seconds</p>
+
+<input type="number"
+id="guessInput"
+class="form-control mb-3"
+placeholder="Enter your guess"
+>
+
+<button class="btn btn-success w-100 mb-3" onclick="submitGuess()">Submit Guess</button>
+<button class="btn btn-secondary w-100 mb-3" onclick="restartGame()">Restart</button>
+
+<div id="result" class="alert alert-info text-center"></div>
+</div>
+
+
+</div>
+  <script src="game.js"></script>
+</body>
+</html>
