@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <!-- <h1>EVENTS</h1> -->
@@ -314,7 +318,7 @@
         }
       });
     </script> -->
-
+    <!-- 
     <h1>DOM Manipulation Demo</h1>
 
     <div class="container">
@@ -381,8 +385,181 @@
           darkMode = false;
         }
       });
-    </script>
+    </script> -->
 
+    <h2>Forms and User Input</h2>
+    <!-- 
+    <form action="/" id="myForm">
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter your name"
+        name="username"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const username = document.getElementById("username");
+      const output = document.getElementById("output");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        output.textContent = "Hello, " + username.value;
+      });
+    </script> -->
+    <!-- 
+    <input type="text" id="email" placeholder="Email" name="email" />
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      name="password"
+    />
+    <button id="loginBtn">Login</button>
+
+    <p id="message"></p>
+
+    <script>
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const message = document.getElementById("message");
+      const loginBtn = document.getElementById("loginBtn");
+
+      loginBtn.addEventListener("click", function () {
+        if (email.value === "" || password.value === "") {
+          message.textContent = "Please fill all fields";
+          message.style.color = "red";
+        } else {
+          message.textContent = "Login successful";
+          message.style.color = "green";
+
+        }
+      });
+    </script> -->
+    <!-- 
+    <form id="form" action="/" method="GET">
+      <div id="error"></div>
+
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <!-- password -->
+    <!-- <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+    - submit -
+      <button type="submit"></button>
+    </form>
+
+    <script>
+      const name = document.getElementById("name");
+      const password = document.getElementById("password");
+      const form = document.getElementById("form");
+      const errorElement = document.getElementById("error");
+
+      form.addEventListener("submit", (e) => {
+        let messages = [];
+        if (name.value === "" || name.value == null) {
+          messages.push("Name is required");
+          messages.style.color = "red";
+        }
+
+        if (password.value.length <= 6) {
+          messages.push("Password must be longer than 6 character");
+        }
+
+        if (password.value.length >= 20) {
+          messages.push("Pasword must be less than 20 characters");
+        }
+
+        if (password.value === "password") {
+          messages.push("Password cannot be 'password'");
+        }
+
+        if (messages.length > 0) {
+          e.preventDefault();
+          errorElement.innerText = messages.join(", ");
+        }
+      });
+    </script> -->
+
+    <h2>Stop Watch Project</h2>
+
+    <div class="container">
+      <h3>Stopwatch</h3>
+      <div id="timer">00:00:00</div>
+
+      <button id="startStopBtn">
+        <i class="fa-solid fa-play" id="play"></i>
+      </button>
+      <!-- reset button -->
+      <button id="resetBtn">
+        <i class="fa-solid fa-arrow-rotate-left" id="reset"></i>
+      </button>
+    </div>
+
+    <script>
+      const startStopBtn = document.querySelector("#startStopBtn");
+      const reserBtn = document.querySelector("#resetBtn");
+      const timerDisplay = document.querySelector("#timer");
+
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+
+      let timerInterval = null;
+      let timerStatus = "stopped";
+
+      function stopWatch() {
+        seconds++;
+        if (seconds === 60) {
+          seconds = 0;
+          minutes++;
+        }
+
+        if (minutes === 60) {
+          minutes = 0;
+          hours++;
+        }
+
+        let displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+        let displayMinutes = minutes < 10 ? "0" + minutes : minutes;
+        let displayHours = hours < 10 ? "0" + hours : hours;
+
+        timerDisplay.textContent =
+          displayHours + ":" + displayMinutes + ":" + displaySeconds;
+      }
+
+      startStopBtn.addEventListener("click", () => {
+        if (timerStatus === "stopped") {
+          timerDisplay = setInterval(stopWatch, 1000);
+          startStopBtn.innerHTML = `<i class="fa-solid fa-pause" id="pause"></i>`;
+          timerStatus = "started";
+        } else {
+          clearInterval(timerInterval);
+          startStopBtn.innerHTML = `<i class+"fa-solid fa-play" id="play"></i>`;
+          timerStatus = "stopped";
+        }
+      });
+
+      reserBtn.addEventListener("click", () => {
+        clearInterval(timerInterval);
+        seconds = minutes = hours = 0;
+        timerDisplay.textContent = "00:00:00";
+        timerStatus = "stopped";
+        startStopBtn.innerHTML = `<i class="fa-solid fa-play" id="play"></i>`;
+      });
+    </script>
     <script src="js2.js"></script>
   </body>
 </html>

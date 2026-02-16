@@ -54,7 +54,7 @@ button {
   background-color: lightgreen;
   font-weight: bold;
 } */
-
+/* 
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f4f4f4;
@@ -134,4 +134,51 @@ button {
 
 .dark .card {
   background: #2a2a2a;
+} */
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 300px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 5px gray;
+  padding: 20px;
+  text-align: center;
+}
+
+#timer {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+button {
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+button i {
+  font-size: 1.5rem;
+  padding: 15px;
+  color: white;
+}
+
+#play {
+  background: green;
+}
+
+#pause {
+  background: orange;
+}
+
+#reset {
+  background: red;
 }
