@@ -607,7 +607,6 @@ let namez = ["John", "Dave", "Eunice", "Jane"];
 let jnames = namez.filter((name) => name.startsWith("J"));
 console.log(jnames);
 
-
 // Control Flow / Condtional Statements (if statement, else statement, else if, switch statement)
 
 let agee = 15;
@@ -641,7 +640,7 @@ switch (light) {
   case "Red":
     console.log("Stop!");
     break;
-  case "Yellow": 
+  case "Yellow":
     console.log("Get Ready!");
     break;
   case "Green":
@@ -1223,18 +1222,86 @@ HTML (Grandparent)
 
 // appendChild() method
 // The appendChild() method adds a new child node to an element as the last child node
-// synthax 
+// synthax
 // parentNode.appendChild(childNode)
 
 // Remove method()
 //The remove() method removes the specified element from the DOM
 //synthax: element.remove()
 
-
-// ===== Manipulating HTML and CSS using JS ==== 
+// ===== Manipulating HTML and CSS using JS ====
 
 // ==== Forms and User Input Handling==========
 // Forms are used to collect user input on web pages. JavaScript can be used to handle form submissions, validate user input, and provide feedback to users.
 
 // Form Validation
 // Form validation is the process of checking user input in a form to ensure it meets certain criteria before it is submitted to the server. This can include checking for required fields, validating email addresses, and ensuring that passwords meet complexity requirements.
+
+// ==== JSON ====
+//JSON - (JavaScript Object Notation)
+// It is a data-interchange format. It is used for exchanging data between a server and a web application.
+//Usually a JSON file comes as an object {key:value} or an array of values[value1, value2]
+
+// JSON formats
+// JSON.stringify()
+// Using the stringy method of JSON, we can convert a js object or an array into a JSON string
+const names = ["Victor", "Utibe", "Weedsdom", "David"];
+console.log(names); // before stringifying
+
+const jsonString = JSON.stringify(names);
+console.log(jsonString);
+
+const person = {
+  name: "   Victor",
+  age: 80,
+  isEmployed: true,
+  hobbies: ["playing footbal", "eating", "cooking"],
+};
+
+console.log(person);
+const jsonString = JSON.stringify(person);
+console.log(jsonString);
+
+const people = [
+  {
+    name: "Victor",
+    age: 80,
+    isEmployed: true,
+  },
+
+  {
+    name: "Utibe",
+    age: 50,
+    isEmployed: false,
+  },
+
+  {
+    name: "Weedsdom",
+    age: 120,
+    isEmployed: true,
+  },
+
+  {
+    name: "David",
+    age: 70,
+    isEmployed: false,
+  },
+];
+
+// The JSON.parse() converts a JSON string into a JavaScript object or array
+
+const jsonNames = `["Victor", "Utibe", "Weedsdom", "David"]`;
+const jsonPerson = `{ name: "Victor", age: 80, isEmployed: true, hobbies: ["playing footbal", "eating", "cooking"]}`;
+const jsonPeople = `[
+  {
+    "name": "Victor", "age": 80,"isEmployed": true },
+  {
+    "name": "Utibe", "age": 50, "isEmployed": false },
+  {
+    "name": "Weedsdom", "age": 120,"isEmployed": true},
+  {
+    "name": "David", "age": 70, "isEmployed": false}
+]`;
+
+const parsedData = JSON.parse(jsonNames);
+console.log(parsedData);
